@@ -45,78 +45,122 @@ export default function CommunityFeedbackPage() {
     <>
       <FormPage
         icon={Users}
-        title="Community Feedback & Report"
+        title="Community Feedback & Reports"
         subtitle="Community"
-        description="Allow members to report issues or suggest improvements."
+        description="For members and staff to report issues or suggest improvements."
         onSubmit={handleSubmit}
         loading={loading}
         submitText="SUBMIT FEEDBACK"
       >
-        <FormInput
-          label="Discord Username"
-          name="discordUsername"
-          placeholder="username#0000"
-        />
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand"></span>
+              Basic Information
+            </h3>
+            <FormInput
+              label="Discord Username"
+              name="discordUsername"
+              placeholder="username#0000"
+            />
+          </div>
 
-        <FormSelect
-          label="Type of Submission"
-          name="submissionType"
-          options={['Staff Report', 'Member Report', 'Server Issue', 'Suggestion', 'General Feedback']}
-          required
-        />
+          <div className="border-t border-zinc-800 pt-6">
+            <h3 className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand"></span>
+              Submission Type
+            </h3>
+            <FormSelect
+              label="Type of Submission"
+              name="submissionType"
+              options={['Staff Report', 'Member Report', 'Server Issue', 'Suggestion', 'General Feedback']}
+              required
+            />
+          </div>
 
-        <FormInput
-          label="What happened?"
-          name="whatHappened"
-          placeholder="Briefly describe the situation..."
-          required
-        />
+          <div className="border-t border-zinc-800 pt-6">
+            <h3 className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand"></span>
+              Report Details
+            </h3>
+            <div className="space-y-4">
+              <FormInput
+                label="What happened?"
+                name="whatHappened"
+                placeholder="Briefly describe the situation..."
+                required
+              />
+              <FormInput
+                label="Who is involved?"
+                name="whoInvolved"
+                placeholder="List usernames or roles..."
+                required
+              />
+              <FormInput
+                label="Explain the situation in detail"
+                name="details"
+                placeholder="Provide as much detail as possible..."
+                required
+                multiline
+                rows={5}
+              />
+            </div>
+          </div>
 
-        <FormInput
-          label="Who is involved?"
-          name="whoInvolved"
-          placeholder="List usernames or roles..."
-          required
-        />
+          <div className="border-t border-zinc-800 pt-6">
+            <h3 className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand"></span>
+              Evidence
+            </h3>
+            <FormInput
+              label="Upload Proof/Screenshots (URL or link)"
+              name="proofUrl"
+              placeholder="https://imgur.com/... or Discord message link"
+            />
+          </div>
 
-        <FormInput
-          label="Explain the situation in detail"
-          name="details"
-          placeholder="Provide as much detail as possible..."
-          required
-          multiline
-          rows={5}
-        />
+          <div className="border-t border-zinc-800 pt-6">
+            <h3 className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand"></span>
+              Severity Level
+            </h3>
+            <FormRadioGroup
+              label="Select severity"
+              name="severity"
+              options={['Low', 'Medium', 'High', 'Critical']}
+              required
+            />
+          </div>
 
-        <FormInput
-          label="Upload Proof/Screenshots (URL)"
-          name="proofUrl"
-          placeholder="https://imgur.com/... or Discord message link"
-        />
+          <div className="border-t border-zinc-800 pt-6">
+            <h3 className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand"></span>
+              Outcome
+            </h3>
+            <FormInput
+              label="What outcome do you expect?"
+              name="expectedOutcome"
+              placeholder="Describe the resolution you're seeking..."
+              required
+              multiline
+              rows={3}
+            />
+          </div>
 
-        <FormRadioGroup
-          label="Severity Level"
-          name="severity"
-          options={['Low', 'Medium', 'High', 'Critical']}
-          required
-        />
-
-        <FormInput
-          label="What outcome do you expect?"
-          name="expectedOutcome"
-          placeholder="Describe the resolution you're seeking..."
-          required
-          multiline
-          rows={3}
-        />
-
-        <FormInput
-          label="Additional Comments"
-          name="additionalComments"
-          placeholder="Anything else you'd like to share..."
-          multiline
-          rows={3}
-        />
+          <div className="border-t border-zinc-800 pt-6">
+            <h3 className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand"></span>
+              Additional Comments
+            </h3>
+            <FormInput
+              label="Anything else you want to add"
+              name="additionalComments"
+              placeholder="Any additional information..."
+              multiline
+              rows={3}
+            />
+          </div>
+        </div>
       </FormPage>
 
       <SuccessModal open={success} onClose={() => setSuccess(false)} />

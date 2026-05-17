@@ -19,7 +19,7 @@ export default function DepartmentReviewPage() {
 
     const formData = new FormData(e.currentTarget)
     const data = {
-      discordUsername: anonymous ? 'Anonymous' : formData.get('discordUsername'),
+      discordUsername: formData.get('discordUsername'),
       anonymous,
       role: formData.get('role'),
       department: formData.get('department'),
@@ -54,94 +54,108 @@ export default function DepartmentReviewPage() {
         icon={BarChart3}
         title="Department Staff Review"
         subtitle="Internal Review"
-        description="Staff under departments can review leadership and internal structure."
+        description="For staff members to review leadership, structure, and department performance."
         onSubmit={handleSubmit}
         loading={loading}
         submitText="SUBMIT REVIEW"
       >
-        <FormInput
-          label="Discord Username"
-          name="discordUsername"
-          placeholder="username#0000"
-          required={!anonymous}
-        />
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand"></span>
+              Basic Information
+            </h3>
+            <div className="space-y-4">
+              <FormInput
+                label="Discord Username"
+                name="discordUsername"
+                placeholder="username#0000"
+              />
+              <FormInput
+                label="Your Role"
+                name="role"
+                placeholder="e.g. Moderator, Content Creator, Designer"
+                required
+              />
+              <FormSelect
+                label="Your Department"
+                name="department"
+                options={['Operations', 'Community', 'Growth']}
+                required
+              />
+            </div>
+          </div>
 
-        <FormToggle
-          label="Submit Anonymously"
-          name="anonymous"
-          checked={anonymous}
-          onChange={() => setAnonymous(!anonymous)}
-        />
+          <div className="border-t border-zinc-800 pt-6">
+            <h3 className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand"></span>
+              Department Performance
+            </h3>
+            <div className="space-y-4">
+              <FormYesNo label="Is your department organised properly?" name="organized" required />
+              <FormYesNo label="Does leadership assign tasks clearly?" name="clearTasks" required />
+              <FormYesNo label="Does your admin communicate well?" name="leadershipCommunication" required />
+              <FormYesNo label="Do you feel supported by your department?" name="feelsSupported" required />
+              <FormYesNo label="Are responsibilities fair and balanced?" name="fairResponsibilities" required />
 
-        <FormInput
-          label="Your Role"
-          name="role"
-          placeholder="e.g. Moderator, Content Creator, Designer"
-          required
-        />
+              <div className="space-y-2">
+                <label className="block text-sm font-medium text-zinc-300">
+                  Rate your department (1–10) <span className="text-brand">*</span>
+                </label>
+                <div className="flex gap-2 flex-wrap">
+                  {Array.from({ length: 10 }, (_, i) => i + 1).map((num) => (
+                    <button
+                      key={num}
+                      type="button"
+                      onClick={() => setRating(num)}
+                      className={`w-10 h-10 rounded-lg text-sm font-bold transition-all ${
+                        rating === num
+                          ? 'bg-brand text-white'
+                          : rating >= num
+                          ? 'bg-brand/20 text-brand-light border border-brand/30'
+                          : 'bg-zinc-800 text-zinc-500 border border-zinc-700 hover:border-zinc-600'
+                      }`}
+                    >
+                      {num}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <FormSelect
-          label="Your Department"
-          name="department"
-          options={DEPARTMENTS as string[]}
-          required
-        />
-
-        <FormYesNo label="Is your department organised properly?" name="organized" required />
-        <FormYesNo label="Does leadership assign tasks clearly?" name="clearTasks" required />
-        <FormYesNo label="Does your admin communicate well?" name="leadershipCommunication" required />
-        <FormYesNo label="Do you feel supported by your department?" name="feelsSupported" required />
-        <FormYesNo label="Are responsibilities fair and balanced?" name="fairResponsibilities" required />
-
-        <div className="space-y-2">
-          <label className="block text-sm font-medium text-zinc-300">
-            Rate your department (1–10) <span className="text-brand">*</span>
-          </label>
-          <div className="flex gap-2 flex-wrap">
-            {Array.from({ length: 10 }, (_, i) => i + 1).map((num) => (
-              <button
-                key={num}
-                type="button"
-                onClick={() => setRating(num)}
-                className={`w-10 h-10 rounded-xl text-sm font-bold transition-all ${
-                  rating === num
-                    ? 'bg-brand text-black'
-                    : rating >= num
-                    ? 'bg-brand/20 text-brand border border-brand/30'
-                    : 'bg-bg-input text-zinc-500 border border-border-subtle hover:border-brand/30'
-                }`}
-              >
-                {num}
-              </button>
-            ))}
+          <div className="border-t border-zinc-800 pt-6">
+            <h3 className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand"></span>
+              Internal Feedback
+            </h3>
+            <div className="space-y-4">
+              <FormInput
+                label="What issues do you see in your department?"
+                name="departmentIssues"
+                placeholder="Describe any issues..."
+                required
+                multiline
+                rows={3}
+              />
+              <FormInput
+                label="Any inactive or unprofessional leadership behaviour?"
+                name="unprofessionalBehavior"
+                placeholder="Describe any concerns..."
+                multiline
+                rows={3}
+              />
+              <FormInput
+                label="Suggestions for improvement"
+                name="suggestions"
+                placeholder="Share your ideas..."
+                required
+                multiline
+                rows={3}
+              />
+            </div>
           </div>
         </div>
-
-        <FormInput
-          label="What issues do you see in your department?"
-          name="departmentIssues"
-          placeholder="Describe any issues..."
-          required
-          multiline
-          rows={3}
-        />
-
-        <FormInput
-          label="Any unprofessional or inactive leadership behaviour?"
-          name="unprofessionalBehavior"
-          placeholder="Describe any concerns..."
-          multiline
-          rows={3}
-        />
-
-        <FormInput
-          label="Suggestions for improvement"
-          name="suggestions"
-          placeholder="Share your ideas..."
-          required
-          multiline
-          rows={3}
-        />
       </FormPage>
 
       <SuccessModal open={success} onClose={() => setSuccess(false)} />

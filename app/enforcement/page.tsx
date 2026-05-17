@@ -52,66 +52,100 @@ export default function EnforcementPage() {
         loading={loading}
         submitText="SUBMIT ESCALATION"
       >
-        <FormSelect
-          label="Which department is involved?"
-          name="department"
-          options={['Operations', 'Community', 'Growth', 'Enforcement']}
-          required
-        />
+        <div className="space-y-6">
+          <div className="border-t border-zinc-800 pt-6">
+            <h3 className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+              Department & People
+            </h3>
+            <div className="space-y-4">
+              <FormSelect
+                label="Which department is involved?"
+                name="department"
+                options={['Operations', 'Community', 'Growth', 'Enforcement']}
+                required
+              />
+              <FormInput
+                label="Who is involved?"
+                name="whoInvolved"
+                placeholder="List names or roles..."
+                required
+              />
+            </div>
+          </div>
 
-        <FormInput
-          label="Who is involved?"
-          name="whoInvolved"
-          placeholder="List names or roles..."
-          required
-        />
+          <div className="border-t border-zinc-800 pt-6">
+            <h3 className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+              Issue Details
+            </h3>
+            <div className="space-y-4">
+              <FormInput
+                label="What is the issue?"
+                name="issue"
+                placeholder="Brief description of the issue..."
+                required
+              />
+              <FormSelect
+                label="Is this inactivity, abuse, or misconduct?"
+                name="issueType"
+                options={['Inactivity', 'Abuse of Power', 'Misconduct', 'Harassment', 'Other']}
+                required
+              />
+              <FormInput
+                label="Provide full explanation"
+                name="explanation"
+                placeholder="Explain the situation in full detail..."
+                required
+                multiline
+                rows={5}
+              />
+            </div>
+          </div>
 
-        <FormInput
-          label="What is the issue?"
-          name="issue"
-          placeholder="Brief description of the issue..."
-          required
-        />
+          <div className="border-t border-zinc-800 pt-6">
+            <h3 className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+              Evidence
+            </h3>
+            <FormInput
+              label="Upload Evidence (URL)"
+              name="evidenceUrl"
+              placeholder="https://imgur.com/... or Discord message link"
+            />
+            <div className="mt-4">
+              <FormYesNo label="Has this been reported before?" name="reportedBefore" required />
+            </div>
+          </div>
 
-        <FormSelect
-          label="Is this inactivity, abuse, or misconduct?"
-          name="issueType"
-          options={['Inactivity', 'Abuse of Power', 'Misconduct', 'Harassment', 'Other']}
-          required
-        />
+          <div className="border-t border-zinc-800 pt-6">
+            <h3 className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+              Severity Level
+            </h3>
+            <FormRadioGroup
+              label="Select severity"
+              name="severity"
+              options={['Low', 'Medium', 'High', 'Critical']}
+              required
+            />
+          </div>
 
-        <FormInput
-          label="Provide full explanation"
-          name="explanation"
-          placeholder="Explain the situation in full detail..."
-          required
-          multiline
-          rows={5}
-        />
-
-        <FormInput
-          label="Upload Evidence (URL)"
-          name="evidenceUrl"
-          placeholder="https://imgur.com/... or Discord message link"
-        />
-
-        <FormYesNo label="Has this been reported before?" name="reportedBefore" required />
-
-        <FormRadioGroup
-          label="Severity Level"
-          name="severity"
-          options={['Low', 'Medium', 'High', 'Critical']}
-          required
-        />
-
-        <FormInput
-          label="Suggested action"
-          name="suggestedAction"
-          placeholder="What action do you suggest should be taken..."
-          required
-          multiline
-          rows={3}
-        />
+          <div className="border-t border-zinc-800 pt-6">
+            <h3 className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+              Suggested Action
+            </h3>
+            <FormInput
+              label="What action do you suggest should be taken..."
+              name="suggestedAction"
+              placeholder="Describe the action you recommend..."
+              required
+              multiline
+              rows={3}
+            />
+          </div>
+        </div>
       </FormPage>
 
       <SuccessModal open={success} onClose={() => setSuccess(false)} />

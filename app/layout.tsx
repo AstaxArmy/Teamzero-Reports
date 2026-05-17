@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { LoadingScreen } from "@/components/LoadingScreen";
 
 export const metadata: Metadata = {
   title: "Team Zero | Internal Review System",
@@ -20,8 +19,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="bg-bg-primary text-white font-inter">
-        <LoadingScreen />
+      <body className="bg-zinc-950 text-white font-inter antialiased">
         <Header />
         <main className="min-h-screen pt-16">{children}</main>
         <Footer />
