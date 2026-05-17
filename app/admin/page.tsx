@@ -32,7 +32,7 @@ export default function AdminPage() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault()
-    if (accessCode === 'teamzero2024') {
+    if (accessCode === 'TZ-2026-Secure-Admin-Access-Key-99!') {
       setAuthenticated(true)
       sessionStorage.setItem('tz_admin_auth', 'true')
     } else {
