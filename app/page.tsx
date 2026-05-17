@@ -59,7 +59,7 @@ export default function Home() {
                   width={180}
                   height={180}
                   className="relative mx-auto animate-float"
-                  style={{ filter: 'drop-shadow(0 0 30px rgba(0, 229, 255, 0.7)) drop-shadow(0 0 60px rgba(0, 229, 255, 0.3))' }}
+                  style={{ filter: 'invert(1) brightness(1.2) drop-shadow(0 0 30px rgba(0, 229, 255, 0.7)) drop-shadow(0 0 60px rgba(0, 229, 255, 0.3))' }}
                 />
               </div>
             </div>

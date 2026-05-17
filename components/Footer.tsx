@@ -11,7 +11,7 @@ export function Footer() {
               alt="Team Zero"
               width={36}
               height={36}
-              style={{ filter: 'drop-shadow(0 0 6px rgba(0, 229, 255, 0.5))' }}
+              style={{ filter: 'invert(1) brightness(1.2) drop-shadow(0 0 6px rgba(0, 229, 255, 0.5))' }}
             />
             <span className="font-orbitron text-sm font-bold tracking-wider">
               TEAM <span className="text-cyan">ZERO</span>

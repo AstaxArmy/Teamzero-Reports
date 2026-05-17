@@ -38,7 +38,7 @@ export function Header() {
                 width={42}
                 height={42}
                 className="transition-transform group-hover:scale-110"
-                style={{ filter: 'drop-shadow(0 0 8px rgba(0, 229, 255, 0.6))' }}
+                style={{ filter: 'invert(1) brightness(1.2) drop-shadow(0 0 8px rgba(0, 229, 255, 0.6))' }}
               />
             </div>
             <span className="font-orbitron text-lg font-bold tracking-wider text-white">
