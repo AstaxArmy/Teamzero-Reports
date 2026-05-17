@@ -18,7 +18,7 @@ module.exports = {
           900: '#18181b',
           800: '#27272a',
           700: '#3f3f46',
-        }
+        },
         bg: {
           primary: '#050505',
           secondary: '#0a0a0a',
