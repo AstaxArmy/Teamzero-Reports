@@ -94,8 +94,8 @@ export default function DepartmentReviewPage() {
         <FormYesNo label="Are responsibilities fair and balanced?" name="fairResponsibilities" required />
 
         <div className="space-y-2">
-          <label className="block text-sm font-medium text-gray-300">
-            Rate your department (1–10) <span className="text-purple">*</span>
+          <label className="block text-sm font-medium text-zinc-300">
+            Rate your department (1–10) <span className="text-brand">*</span>
           </label>
           <div className="flex gap-2 flex-wrap">
             {Array.from({ length: 10 }, (_, i) => i + 1).map((num) => (
@@ -105,10 +105,10 @@ export default function DepartmentReviewPage() {
                 onClick={() => setRating(num)}
                 className={`w-10 h-10 rounded-xl text-sm font-bold transition-all ${
                   rating === num
-                    ? 'bg-purple text-black'
+                    ? 'bg-brand text-black'
                     : rating >= num
-                    ? 'bg-purple/20 text-purple border border-purple/30'
-                    : 'bg-bg-input text-gray-500 border border-border-subtle hover:border-purple/30'
+                    ? 'bg-brand/20 text-brand border border-brand/30'
+                    : 'bg-bg-input text-zinc-500 border border-border-subtle hover:border-brand/30'
                 }`}
               >
                 {num}

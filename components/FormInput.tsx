@@ -23,8 +23,8 @@ export function FormInput({
 }: FormInputProps) {
   return (
     <div className="space-y-2">
-      <label htmlFor={name} className="block text-sm font-medium text-gray-300">
-        {label} {required && <span className="text-purple">*</span>}
+      <label htmlFor={name} className="block text-sm font-medium text-zinc-300">
+        {label} {required && <span className="text-brand">*</span>}
       </label>
       {multiline ? (
         <textarea
@@ -72,8 +72,8 @@ export function FormSelect({
 }: FormSelectProps) {
   return (
     <div className="space-y-2">
-      <label htmlFor={name} className="block text-sm font-medium text-gray-300">
-        {label} {required && <span className="text-purple">*</span>}
+      <label htmlFor={name} className="block text-sm font-medium text-zinc-300">
+        {label} {required && <span className="text-brand">*</span>}
       </label>
       <select
         id={name}
@@ -102,7 +102,7 @@ interface FormToggleProps {
 export function FormToggle({ label, name, checked, onChange }: FormToggleProps) {
   return (
     <div className="flex items-center justify-between p-4 rounded-xl bg-bg-input border border-border-subtle">
-      <span className="text-sm font-medium text-gray-300">{label}</span>
+      <span className="text-sm font-medium text-zinc-300">{label}</span>
       <label className="relative inline-flex items-center cursor-pointer">
         <input
           type="checkbox"
@@ -111,7 +111,7 @@ export function FormToggle({ label, name, checked, onChange }: FormToggleProps) 
           onChange={onChange}
           className="sr-only peer"
         />
-        <div className="w-11 h-6 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-purple"></div>
+        <div className="w-11 h-6 bg-zinc-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-brand"></div>
       </label>
     </div>
   )
@@ -136,8 +136,8 @@ export function FormRadioGroup({
 }: FormRadioGroupProps) {
   return (
     <div className="space-y-2">
-      <label className="block text-sm font-medium text-gray-300">
-        {label} {required && <span className="text-purple">*</span>}
+      <label className="block text-sm font-medium text-zinc-300">
+        {label} {required && <span className="text-brand">*</span>}
       </label>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
         {options.map((opt) => (
@@ -145,8 +145,8 @@ export function FormRadioGroup({
             key={opt}
             className={`flex items-center justify-center px-4 py-2 rounded-xl border cursor-pointer text-sm font-medium transition-all ${
               value === opt
-                ? 'border-purple bg-purple/10 text-purple'
-                : 'border-border-subtle text-gray-400 hover:border-purple/50 hover:text-white'
+                ? 'border-brand bg-brand/10 text-brand'
+                : 'border-border-subtle text-zinc-400 hover:border-brand/50 hover:text-white'
             }`}
           >
             <input
@@ -175,14 +175,14 @@ interface FormYesNoProps {
 export function FormYesNo({ label, name, required = false }: FormYesNoProps) {
   return (
     <div className="space-y-2">
-      <label className="block text-sm font-medium text-gray-300">
-        {label} {required && <span className="text-purple">*</span>}
+      <label className="block text-sm font-medium text-zinc-300">
+        {label} {required && <span className="text-brand">*</span>}
       </label>
       <div className="flex gap-3">
         {['Yes', 'No'].map((opt) => (
           <label
             key={opt}
-            className="flex-1 flex items-center justify-center px-4 py-3 rounded-xl border border-border-subtle cursor-pointer text-sm font-medium text-gray-400 hover:border-purple/50 transition-all has-[:checked]:border-purple has-[:checked]:bg-purple/10 has-[:checked]:text-purple"
+            className="flex-1 flex items-center justify-center px-4 py-3 rounded-xl border border-border-subtle cursor-pointer text-sm font-medium text-zinc-400 hover:border-brand/50 transition-all has-[:checked]:border-brand has-[:checked]:bg-brand/10 has-[:checked]:text-brand"
           >
             <input
               type="radio"

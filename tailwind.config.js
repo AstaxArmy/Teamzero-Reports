@@ -7,11 +7,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        purple: {
-          DEFAULT: '#a855f7',
-          light: '#c084fc',
-          dark: '#7c3aed',
+        brand: {
+          DEFAULT: '#8b5cf6',
+          light: '#a78bfa',
+          dark: '#6d28d9',
+          glow: 'rgba(139, 92, 246, 0.5)',
         },
+        zinc: {
+          950: '#09090b',
+          900: '#18181b',
+          800: '#27272a',
+          700: '#3f3f46',
+        }
         bg: {
           primary: '#050505',
           secondary: '#0a0a0a',

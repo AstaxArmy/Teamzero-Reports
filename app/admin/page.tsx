@@ -135,9 +135,9 @@ export default function AdminPage() {
       <div className="max-w-md mx-auto px-4 py-24">
         <div className="glass-card rounded-2xl p-8 animate-slide-up">
           <div className="text-center mb-6">
-            <Shield className="h-12 w-12 text-purple mx-auto mb-4" />
+            <Shield className="h-12 w-12 text-brand mx-auto mb-4" />
             <h1 className="font-orbitron text-2xl font-bold gradient-text">ADMIN ACCESS</h1>
-            <p className="text-gray-400 text-sm mt-2">Enter the access code to continue</p>
+            <p className="text-zinc-400 text-sm mt-2">Enter the access code to continue</p>
           </div>
           <form onSubmit={handleLogin} className="space-y-4">
             <input
@@ -165,11 +165,11 @@ export default function AdminPage() {
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
         <div>
           <h1 className="font-orbitron text-2xl sm:text-3xl font-bold gradient-text">ADMIN DASHBOARD</h1>
-          <p className="text-gray-400 text-sm mt-1">Manage all submissions and reports</p>
+          <p className="text-zinc-400 text-sm mt-1">Manage all submissions and reports</p>
         </div>
         <button
           onClick={exportData}
-          className="flex items-center gap-2 px-4 py-2 rounded-xl border border-border-subtle text-sm font-medium text-gray-300 hover:border-purple/30 hover:text-purple transition-all"
+          className="flex items-center gap-2 px-4 py-2 rounded-xl border border-border-subtle text-sm font-medium text-zinc-300 hover:border-brand/30 hover:text-brand transition-all"
         >
           <Download className="h-4 w-4" />
           Export CSV
@@ -180,11 +180,11 @@ export default function AdminPage() {
         {[
           { label: 'Total', value: stats.total, color: 'text-white' },
           { label: 'Pending', value: stats.pending, color: 'text-yellow-400' },
-          { label: 'Resolved', value: stats.resolved, color: 'text-purple' },
+          { label: 'Resolved', value: stats.resolved, color: 'text-brand' },
           { label: 'Critical', value: stats.critical, color: 'text-red-400' },
         ].map((stat) => (
           <div key={stat.label} className="glass-card rounded-xl p-4">
-            <p className="text-sm text-gray-400">{stat.label}</p>
+            <p className="text-sm text-zinc-400">{stat.label}</p>
             <p className={`font-orbitron text-2xl font-bold ${stat.color}`}>{stat.value}</p>
           </div>
         ))}
@@ -193,7 +193,7 @@ export default function AdminPage() {
       <div className="glass-card rounded-xl p-4 mb-6">
         <div className="flex flex-col sm:flex-row gap-3">
           <div className="flex-1 relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-500" />
             <input
               type="text"
               value={search}
@@ -251,12 +251,12 @@ export default function AdminPage() {
 
       {loading ? (
         <div className="text-center py-12">
-          <div className="inline-block h-8 w-8 border-2 border-purple border-t-transparent rounded-full animate-spin" />
-          <p className="text-gray-400 mt-4">Loading submissions...</p>
+          <div className="inline-block h-8 w-8 border-2 border-brand border-t-transparent rounded-full animate-spin" />
+          <p className="text-zinc-400 mt-4">Loading submissions...</p>
         </div>
       ) : filteredSubmissions.length === 0 ? (
         <div className="text-center py-12 glass-card rounded-xl">
-          <p className="text-gray-400">No submissions found</p>
+          <p className="text-zinc-400">No submissions found</p>
         </div>
       ) : (
         <div className="space-y-3">
@@ -275,7 +275,7 @@ export default function AdminPage() {
                       {TYPE_LABELS[submission.type]}
                     </span>
                     {dept && (
-                      <span className="px-2 py-1 rounded-md text-xs font-medium border border-border-subtle text-gray-400">
+                      <span className="px-2 py-1 rounded-md text-xs font-medium border border-border-subtle text-zinc-400">
                         {dept}
                       </span>
                     )}
@@ -284,17 +284,17 @@ export default function AdminPage() {
                         {severity}
                       </span>
                     )}
-                    <span className="text-sm text-gray-400 truncate">
+                    <span className="text-sm text-zinc-400 truncate">
                       {data.discordUsername || data.whoInvolved || 'Anonymous'}
                     </span>
-                    <span className="text-xs text-gray-500">
+                    <span className="text-xs text-zinc-500">
                       {new Date(submission.created_at).toLocaleDateString()}
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <button
                       onClick={() => setSelectedSubmission(submission)}
-                      className="p-2 rounded-lg text-gray-400 hover:text-purple hover:bg-white/5 transition-all"
+                      className="p-2 rounded-lg text-zinc-400 hover:text-brand hover:bg-white/5 transition-all"
                       title="View Details"
                     >
                       <Eye className="h-4 w-4" />
@@ -303,8 +303,8 @@ export default function AdminPage() {
                       onClick={() => toggleResolved(submission.id, submission.resolved)}
                       className={`p-2 rounded-lg transition-all ${
                         submission.resolved
-                          ? 'text-purple hover:text-purple-light'
-                          : 'text-gray-400 hover:text-white hover:bg-white/5'
+                          ? 'text-brand hover:text-brand-light'
+                          : 'text-zinc-400 hover:text-white hover:bg-white/5'
                       }`}
                       title={submission.resolved ? 'Mark as Pending' : 'Mark as Resolved'}
                     >
@@ -313,7 +313,7 @@ export default function AdminPage() {
                   </div>
                 </div>
                 {data.details || data.explanation || data.whatHappened ? (
-                  <p className="text-sm text-gray-500 mt-2 line-clamp-2">
+                  <p className="text-sm text-zinc-500 mt-2 line-clamp-2">
                     {data.details || data.explanation || data.whatHappened}
                   </p>
                 ) : null}
@@ -354,7 +354,7 @@ function SubmissionModal({
       <div className="glass-card rounded-2xl p-6 max-w-2xl w-full max-h-[80vh] overflow-y-auto animate-slide-up">
         <div className="flex items-center justify-between mb-6">
           <h2 className="font-orbitron text-xl font-bold gradient-text">SUBMISSION DETAILS</h2>
-          <button onClick={onClose} className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5">
+          <button onClick={onClose} className="p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-white/5">
             <XCircle className="h-5 w-5" />
           </button>
         </div>
@@ -364,7 +364,7 @@ function SubmissionModal({
             {TYPE_LABELS[submission.type]}
           </span>
           {dept && (
-            <span className="px-3 py-1 rounded-md text-xs font-medium border border-border-subtle text-gray-400">
+            <span className="px-3 py-1 rounded-md text-xs font-medium border border-border-subtle text-zinc-400">
               {dept}
             </span>
           )}
@@ -373,10 +373,10 @@ function SubmissionModal({
               {data.severity}
             </span>
           )}
-          <span className={`px-3 py-1 rounded-md text-xs font-medium border ${submission.resolved ? 'bg-purple/20 text-purple border-purple/30' : 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30'}`}>
+          <span className={`px-3 py-1 rounded-md text-xs font-medium border ${submission.resolved ? 'bg-brand/20 text-brand border-brand/30' : 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30'}`}>
             {submission.resolved ? 'Resolved' : 'Pending'}
           </span>
-          <span className="px-3 py-1 rounded-md text-xs font-medium border border-border-subtle text-gray-400">
+          <span className="px-3 py-1 rounded-md text-xs font-medium border border-border-subtle text-zinc-400">
             {new Date(submission.created_at).toLocaleString()}
           </span>
         </div>
@@ -386,10 +386,10 @@ function SubmissionModal({
             .filter(([_, value]) => value && value !== 'undefined' && value !== 'null')
             .map(([key, value]) => (
               <div key={key} className="p-3 rounded-xl bg-bg-input">
-                <p className="text-xs font-medium text-purple uppercase tracking-wider mb-1">
+                <p className="text-xs font-medium text-brand uppercase tracking-wider mb-1">
                   {key.replace(/([A-Z])/g, ' $1').trim()}
                 </p>
-                <p className="text-sm text-gray-300 whitespace-pre-wrap">{value}</p>
+                <p className="text-sm text-zinc-300 whitespace-pre-wrap">{value}</p>
               </div>
             ))}
         </div>
@@ -397,7 +397,7 @@ function SubmissionModal({
         <div className="flex gap-3 mt-6">
           <button
             onClick={onClose}
-            className="flex-1 py-2 px-4 rounded-xl border border-border-subtle text-sm font-medium text-gray-300 hover:bg-white/5 transition-all"
+            className="flex-1 py-2 px-4 rounded-xl border border-border-subtle text-sm font-medium text-zinc-300 hover:bg-white/5 transition-all"
           >
             Close
           </button>
@@ -406,7 +406,7 @@ function SubmissionModal({
             className={`flex-1 py-2 px-4 rounded-xl text-sm font-medium transition-all ${
               submission.resolved
                 ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30 hover:bg-yellow-500/30'
-                : 'bg-purple/20 text-purple border border-purple/30 hover:bg-purple/30'
+                : 'bg-brand/20 text-brand border border-brand/30 hover:bg-brand/30'
             }`}
           >
             {submission.resolved ? 'Mark as Pending' : 'Mark as Resolved'}

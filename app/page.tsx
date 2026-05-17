@@ -7,36 +7,36 @@ const categories = [
   {
     href: '/department-review',
     icon: BarChart3,
-    title: 'Department Staff Review',
-    description: 'Staff under departments can review leadership and internal structure',
-    color: 'from-purple-500/20 to-purple-600/10',
-    borderColor: 'border-purple-500/20',
-    iconColor: 'text-purple-400',
+    title: 'Department Review',
+    description: 'Review leadership and internal structure',
+    color: 'from-violet-500/10 to-violet-600/5',
+    borderColor: 'border-violet-500/20',
+    iconColor: 'text-violet-400',
   },
   {
     href: '/community-feedback',
     icon: Users,
-    title: 'Community Feedback & Report',
-    description: 'Members can report issues or suggest improvements',
-    color: 'from-purple/20 to-purple-dark/10',
-    borderColor: 'border-purple/20',
-    iconColor: 'text-purple',
+    title: 'Community Feedback',
+    description: 'Report issues or suggest improvements',
+    color: 'from-blue-500/10 to-blue-600/5',
+    borderColor: 'border-blue-500/20',
+    iconColor: 'text-blue-400',
   },
   {
     href: '/growth',
     icon: TrendingUp,
-    title: 'Growth & Activity Feedback',
-    description: 'Measure server performance and growth across departments',
-    color: 'from-green-500/20 to-green-600/10',
-    borderColor: 'border-green-500/20',
-    iconColor: 'text-green-400',
+    title: 'Growth & Activity',
+    description: 'Measure performance across departments',
+    color: 'from-emerald-500/10 to-emerald-600/5',
+    borderColor: 'border-emerald-500/20',
+    iconColor: 'text-emerald-400',
   },
   {
     href: '/enforcement',
     icon: AlertTriangle,
-    title: 'Enforcement Escalation',
-    description: 'Handle serious internal issues and leadership abuse',
-    color: 'from-red-500/20 to-red-600/10',
+    title: 'Enforcement',
+    description: 'Handle serious internal issues',
+    color: 'from-red-500/10 to-red-600/5',
     borderColor: 'border-red-500/20',
     iconColor: 'text-red-400',
   },
@@ -44,61 +44,62 @@ const categories = [
 
 export default function Home() {
   return (
-    <div className="relative">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple/5 via-bg-primary to-bg-primary" />
+    <div className="relative min-h-screen">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet-950/20 via-zinc-950 to-zinc-950" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
         <FadeIn>
-          <div className="text-center mb-16">
-            <div className="mb-8">
+          <div className="text-center mb-20">
+            <div className="mb-10">
               <div className="relative inline-block">
-                <div className="absolute inset-0 bg-purple/20 blur-3xl rounded-full scale-150 animate-pulse" />
+                <div className="absolute inset-0 bg-brand/10 blur-3xl rounded-full scale-150 animate-pulse" />
                 <Image
                   src="/logo.png"
                   alt="Team Zero"
-                  width={180}
-                  height={180}
+                  width={160}
+                  height={160}
                   className="relative mx-auto animate-float"
-                  style={{ filter: 'invert(1) brightness(1.2) drop-shadow(0 0 30px rgba(168, 85, 247, 0.7)) drop-shadow(0 0 60px rgba(168, 85, 247, 0.3))' }}
+                  style={{ filter: 'brightness(0) invert(1) drop-shadow(0 0 20px rgba(139, 92, 246, 0.4))' }}
                 />
               </div>
             </div>
 
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple/10 border border-purple/20 mb-6">
-              <Shield className="h-4 w-4 text-purple" />
-              <span className="font-orbitron text-xs font-bold tracking-widest text-purple uppercase">Internal Review System</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-800/50 border border-zinc-700/50 mb-6">
+              <Shield className="h-3.5 w-3.5 text-zinc-400" />
+              <span className="font-orbitron text-[10px] font-bold tracking-widest text-zinc-400 uppercase">Internal Review System</span>
             </div>
 
-            <h1 className="font-orbitron text-4xl sm:text-5xl lg:text-6xl font-black mb-6">
-              <span className="gradient-text">TEAM ZERO</span>
+            <h1 className="font-orbitron text-4xl sm:text-5xl lg:text-6xl font-black mb-6 tracking-tight">
+              <span className="text-white">TEAM </span>
+              <span className="text-brand-light">ZERO</span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto mb-4">
-              Professional esports organisation management system. Report issues, give feedback, and help us improve.
+            <p className="text-lg sm:text-xl text-zinc-400 max-w-xl mx-auto mb-4 font-light">
+              Professional esports organisation management system.
             </p>
 
-            <p className="text-sm text-gray-500 max-w-xl mx-auto">
-              All submissions are securely stored and reviewed by the Team Zero administration team.
+            <p className="text-sm text-zinc-500 max-w-md mx-auto">
+              Submit reports, feedback, and suggestions to help us improve.
             </p>
           </div>
         </FadeIn>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
           {categories.map((cat, i) => (
             <FadeIn key={cat.href} delay={i * 100}>
               <Link
                 href={cat.href}
-                className="group glass-card rounded-2xl p-6 block transition-all duration-300 hover:scale-[1.02]"
+                className="group glass-card p-6 block transition-all duration-300 hover:border-zinc-600"
               >
-                <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br ${cat.color} border ${cat.borderColor} mb-4`}>
-                  <cat.icon className={`h-6 w-6 ${cat.iconColor}`} />
+                <div className={`inline-flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br ${cat.color} border ${cat.borderColor} mb-4`}>
+                  <cat.icon className={`h-5 w-5 ${cat.iconColor}`} />
                 </div>
-                <h3 className="font-orbitron text-base font-bold text-white mb-2 group-hover:text-purple transition-colors">
+                <h3 className="font-orbitron text-sm font-bold text-white mb-1.5 tracking-wide">
                   {cat.title}
                 </h3>
-                <p className="text-sm text-gray-400 mb-4">{cat.description}</p>
-                <div className="flex items-center gap-1 text-sm font-medium text-purple group-hover:gap-2 transition-all">
-                  Submit <ArrowRight className="h-4 w-4" />
+                <p className="text-xs text-zinc-500 mb-4 leading-relaxed">{cat.description}</p>
+                <div className="flex items-center gap-1.5 text-xs font-medium text-zinc-400 group-hover:text-brand-light transition-all">
+                  Submit <ArrowRight className="h-3.5 w-3.5" />
                 </div>
               </Link>
             </FadeIn>
@@ -109,9 +110,9 @@ export default function Home() {
           <div className="mt-16 text-center">
             <Link
               href="/admin"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-border-subtle text-sm font-medium text-gray-400 hover:text-purple hover:border-purple/30 transition-all"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-800 text-xs font-medium text-zinc-500 hover:text-zinc-300 hover:border-zinc-600 transition-all"
             >
-              <Shield className="h-4 w-4" />
+              <Shield className="h-3.5 w-3.5" />
               Admin Dashboard
             </Link>
           </div>
