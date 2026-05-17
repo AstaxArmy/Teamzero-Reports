@@ -18,9 +18,9 @@ const categories = [
     icon: Users,
     title: 'Community Feedback & Report',
     description: 'Members can report issues or suggest improvements',
-    color: 'from-cyan/20 to-cyan-dark/10',
-    borderColor: 'border-cyan/20',
-    iconColor: 'text-cyan',
+    color: 'from-purple/20 to-purple-dark/10',
+    borderColor: 'border-purple/20',
+    iconColor: 'text-purple',
   },
   {
     href: '/growth',
@@ -45,14 +45,14 @@ const categories = [
 export default function Home() {
   return (
     <div className="relative">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan/5 via-bg-primary to-bg-primary" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple/5 via-bg-primary to-bg-primary" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
         <FadeIn>
           <div className="text-center mb-16">
             <div className="mb-8">
               <div className="relative inline-block">
-                <div className="absolute inset-0 bg-cyan/20 blur-3xl rounded-full scale-150 animate-pulse" />
+                <div className="absolute inset-0 bg-purple/20 blur-3xl rounded-full scale-150 animate-pulse" />
                 <Image
                   src="/logo.png"
                   alt="Team Zero"
@@ -64,9 +64,9 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan/10 border border-cyan/20 mb-6">
-              <Shield className="h-4 w-4 text-cyan" />
-              <span className="font-orbitron text-xs font-bold tracking-widest text-cyan uppercase">Internal Review System</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple/10 border border-purple/20 mb-6">
+              <Shield className="h-4 w-4 text-purple" />
+              <span className="font-orbitron text-xs font-bold tracking-widest text-purple uppercase">Internal Review System</span>
             </div>
 
             <h1 className="font-orbitron text-4xl sm:text-5xl lg:text-6xl font-black mb-6">
@@ -93,11 +93,11 @@ export default function Home() {
                 <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br ${cat.color} border ${cat.borderColor} mb-4`}>
                   <cat.icon className={`h-6 w-6 ${cat.iconColor}`} />
                 </div>
-                <h3 className="font-orbitron text-base font-bold text-white mb-2 group-hover:text-cyan transition-colors">
+                <h3 className="font-orbitron text-base font-bold text-white mb-2 group-hover:text-purple transition-colors">
                   {cat.title}
                 </h3>
                 <p className="text-sm text-gray-400 mb-4">{cat.description}</p>
-                <div className="flex items-center gap-1 text-sm font-medium text-cyan group-hover:gap-2 transition-all">
+                <div className="flex items-center gap-1 text-sm font-medium text-purple group-hover:gap-2 transition-all">
                   Submit <ArrowRight className="h-4 w-4" />
                 </div>
               </Link>
@@ -109,7 +109,7 @@ export default function Home() {
           <div className="mt-16 text-center">
             <Link
               href="/admin"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-border-subtle text-sm font-medium text-gray-400 hover:text-cyan hover:border-cyan/30 transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-border-subtle text-sm font-medium text-gray-400 hover:text-purple hover:border-purple/30 transition-all"
             >
               <Shield className="h-4 w-4" />
               Admin Dashboard

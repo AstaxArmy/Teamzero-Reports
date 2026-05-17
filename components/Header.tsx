@@ -27,7 +27,7 @@ export function Header() {
   }, [])
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'py-3 bg-bg-primary/95 backdrop-blur-xl border-b border-cyan/10' : 'py-5 bg-transparent'}`}>
+    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'py-3 bg-bg-primary/95 backdrop-blur-xl border-b border-purple/10' : 'py-5 bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 group">
@@ -42,7 +42,7 @@ export function Header() {
               />
             </div>
             <span className="font-orbitron text-lg font-bold tracking-wider text-white">
-              TEAM <span className="text-cyan">ZERO</span>
+              TEAM <span className="text-purple">ZERO</span>
             </span>
           </Link>
 
@@ -52,12 +52,12 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 ${
-                  pathname === link.href ? 'text-cyan' : 'text-gray-400 hover:text-white'
+                  pathname === link.href ? 'text-purple' : 'text-gray-400 hover:text-white'
                 }`}
               >
                 {link.label}
                 {pathname === link.href && (
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-cyan animate-pulse-glow" />
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-purple animate-pulse-glow" />
                 )}
               </Link>
             ))}
@@ -65,7 +65,7 @@ export function Header() {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 text-gray-400 hover:text-cyan transition-colors"
+            className="lg:hidden p-2 text-gray-400 hover:text-purple transition-colors"
           >
             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -73,7 +73,7 @@ export function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="lg:hidden bg-bg-secondary/95 backdrop-blur-xl border-t border-cyan/10 animate-fade-in">
+        <div className="lg:hidden bg-bg-secondary/95 backdrop-blur-xl border-t border-purple/10 animate-fade-in">
           <nav className="px-4 py-4 space-y-1">
             {navLinks.map((link) => (
               <Link
@@ -82,7 +82,7 @@ export function Header() {
                 onClick={() => setMobileOpen(false)}
                 className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all ${
                   pathname === link.href
-                    ? 'bg-cyan/10 text-cyan'
+                    ? 'bg-purple/10 text-purple'
                     : 'text-gray-400 hover:text-white hover:bg-white/5'
                 }`}
               >

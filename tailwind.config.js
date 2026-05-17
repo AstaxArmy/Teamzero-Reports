@@ -7,10 +7,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        cyan: {
-          DEFAULT: '#00e5ff',
-          light: '#33eaff',
-          dark: '#0099cc',
+        purple: {
+          DEFAULT: '#a855f7',
+          light: '#c084fc',
+          dark: '#7c3aed',
         },
         bg: {
           primary: '#050505',

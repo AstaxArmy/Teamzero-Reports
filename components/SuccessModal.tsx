@@ -19,7 +19,7 @@ export function SuccessModal({ open, onClose, message = 'Your submission has bee
           <X className="h-5 w-5" />
         </button>
         <div className="flex flex-col items-center text-center">
-          <CheckCircle2 className="h-16 w-16 text-cyan mb-4" />
+          <CheckCircle2 className="h-16 w-16 text-purple mb-4" />
           <h3 className="font-orbitron text-xl font-bold text-white mb-2">SUBMISSION RECEIVED</h3>
           <p className="text-gray-400 text-sm mb-6">{message}</p>
           <div className="flex gap-3 w-full">
@@ -32,7 +32,7 @@ export function SuccessModal({ open, onClose, message = 'Your submission has bee
             </Link>
             <button
               onClick={onClose}
-              className="flex-1 py-2 px-4 rounded-xl bg-cyan text-sm font-medium text-black hover:bg-cyan-light transition-all"
+              className="flex-1 py-2 px-4 rounded-xl bg-purple text-sm font-medium text-black hover:bg-purple-light transition-all"
             >
               Submit Another
             </button>

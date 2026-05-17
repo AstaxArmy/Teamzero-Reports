@@ -66,7 +66,7 @@ body {
 
 .loading-progress {
   height: 100%;
-  background: linear-gradient(90deg, #00e5ff, #8A2BE2, #00e5ff);
+  background: linear-gradient(90deg, #a855f7, #7c3aed, #a855f7);
   background-size: 200% 100%;
   border-radius: 10px;
   animation: loading 2s ease-in-out infinite;
@@ -88,17 +88,17 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #00e5ff, #8A2BE2);
+  background: linear-gradient(180deg, #a855f7, #7c3aed);
   border-radius: 10px;
   border: 2px solid #0a0a0a;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #00ffff, #9945FF);
+  background: linear-gradient(180deg, #c084fc, #9333ea);
 }
 
 ::selection {
-  background: rgba(0, 229, 255, 0.3);
+  background: rgba(168, 85, 247, 0.3);
   color: #fff;
 }
 
@@ -113,7 +113,7 @@ input, textarea, select {
 
 input:focus, textarea:focus, select:focus {
   outline: none !important;
-  border-color: #00e5ff !important;
+  border-color: #a855f7 !important;
 }
 
 select option {
@@ -130,13 +130,13 @@ select option {
 
 .glass-card:hover {
   transform: translateY(-5px);
-  border-color: #00e5ff;
-  box-shadow: 0 10px 30px rgba(0, 229, 255, 0.15);
+  border-color: #a855f7;
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.15);
 }
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, #00e5ff 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #a855f7 0%, #ffffff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -155,31 +155,31 @@ select option {
 }
 
 /* Button Styles */
-.btn-cyan {
-  background: linear-gradient(135deg, #00e5ff 0%, #0099cc 100%);
-  color: #000;
+.btn-purple {
+  background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+  color: #fff;
   font-weight: 700;
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-.btn-cyan:hover {
+.btn-purple:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 229, 255, 0.5);
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.5);
 }
 
 .btn-outline {
   background: transparent;
-  border: 2px solid #00e5ff;
-  color: #00e5ff;
+  border: 2px solid #a855f7;
+  color: #a855f7;
   font-weight: 600;
   transition: all 0.3s ease;
 }
 
 .btn-outline:hover {
-  background: #00e5ff;
-  color: #000;
+  background: #a855f7;
+  color: #fff;
   transform: translateY(-2px);
 }
 

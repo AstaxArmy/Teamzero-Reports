@@ -135,7 +135,7 @@ export default function AdminPage() {
       <div className="max-w-md mx-auto px-4 py-24">
         <div className="glass-card rounded-2xl p-8 animate-slide-up">
           <div className="text-center mb-6">
-            <Shield className="h-12 w-12 text-cyan mx-auto mb-4" />
+            <Shield className="h-12 w-12 text-purple mx-auto mb-4" />
             <h1 className="font-orbitron text-2xl font-bold gradient-text">ADMIN ACCESS</h1>
             <p className="text-gray-400 text-sm mt-2">Enter the access code to continue</p>
           </div>
@@ -150,7 +150,7 @@ export default function AdminPage() {
             />
             <button
               type="submit"
-              className="w-full py-3 px-6 rounded-xl btn-cyan font-orbitron text-sm tracking-wider"
+              className="w-full py-3 px-6 rounded-xl btn-purple font-orbitron text-sm tracking-wider"
             >
               ACCESS DASHBOARD
             </button>
@@ -169,7 +169,7 @@ export default function AdminPage() {
         </div>
         <button
           onClick={exportData}
-          className="flex items-center gap-2 px-4 py-2 rounded-xl border border-border-subtle text-sm font-medium text-gray-300 hover:border-cyan/30 hover:text-cyan transition-all"
+          className="flex items-center gap-2 px-4 py-2 rounded-xl border border-border-subtle text-sm font-medium text-gray-300 hover:border-purple/30 hover:text-purple transition-all"
         >
           <Download className="h-4 w-4" />
           Export CSV
@@ -180,7 +180,7 @@ export default function AdminPage() {
         {[
           { label: 'Total', value: stats.total, color: 'text-white' },
           { label: 'Pending', value: stats.pending, color: 'text-yellow-400' },
-          { label: 'Resolved', value: stats.resolved, color: 'text-cyan' },
+          { label: 'Resolved', value: stats.resolved, color: 'text-purple' },
           { label: 'Critical', value: stats.critical, color: 'text-red-400' },
         ].map((stat) => (
           <div key={stat.label} className="glass-card rounded-xl p-4">
@@ -251,7 +251,7 @@ export default function AdminPage() {
 
       {loading ? (
         <div className="text-center py-12">
-          <div className="inline-block h-8 w-8 border-2 border-cyan border-t-transparent rounded-full animate-spin" />
+          <div className="inline-block h-8 w-8 border-2 border-purple border-t-transparent rounded-full animate-spin" />
           <p className="text-gray-400 mt-4">Loading submissions...</p>
         </div>
       ) : filteredSubmissions.length === 0 ? (
@@ -294,7 +294,7 @@ export default function AdminPage() {
                   <div className="flex items-center gap-2">
                     <button
                       onClick={() => setSelectedSubmission(submission)}
-                      className="p-2 rounded-lg text-gray-400 hover:text-cyan hover:bg-white/5 transition-all"
+                      className="p-2 rounded-lg text-gray-400 hover:text-purple hover:bg-white/5 transition-all"
                       title="View Details"
                     >
                       <Eye className="h-4 w-4" />
@@ -303,7 +303,7 @@ export default function AdminPage() {
                       onClick={() => toggleResolved(submission.id, submission.resolved)}
                       className={`p-2 rounded-lg transition-all ${
                         submission.resolved
-                          ? 'text-cyan hover:text-cyan-light'
+                          ? 'text-purple hover:text-purple-light'
                           : 'text-gray-400 hover:text-white hover:bg-white/5'
                       }`}
                       title={submission.resolved ? 'Mark as Pending' : 'Mark as Resolved'}
@@ -373,7 +373,7 @@ function SubmissionModal({
               {data.severity}
             </span>
           )}
-          <span className={`px-3 py-1 rounded-md text-xs font-medium border ${submission.resolved ? 'bg-cyan/20 text-cyan border-cyan/30' : 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30'}`}>
+          <span className={`px-3 py-1 rounded-md text-xs font-medium border ${submission.resolved ? 'bg-purple/20 text-purple border-purple/30' : 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30'}`}>
             {submission.resolved ? 'Resolved' : 'Pending'}
           </span>
           <span className="px-3 py-1 rounded-md text-xs font-medium border border-border-subtle text-gray-400">
@@ -386,7 +386,7 @@ function SubmissionModal({
             .filter(([_, value]) => value && value !== 'undefined' && value !== 'null')
             .map(([key, value]) => (
               <div key={key} className="p-3 rounded-xl bg-bg-input">
-                <p className="text-xs font-medium text-cyan uppercase tracking-wider mb-1">
+                <p className="text-xs font-medium text-purple uppercase tracking-wider mb-1">
                   {key.replace(/([A-Z])/g, ' $1').trim()}
                 </p>
                 <p className="text-sm text-gray-300 whitespace-pre-wrap">{value}</p>
@@ -406,7 +406,7 @@ function SubmissionModal({
             className={`flex-1 py-2 px-4 rounded-xl text-sm font-medium transition-all ${
               submission.resolved
                 ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30 hover:bg-yellow-500/30'
-                : 'bg-cyan/20 text-cyan border border-cyan/30 hover:bg-cyan/30'
+                : 'bg-purple/20 text-purple border border-purple/30 hover:bg-purple/30'
             }`}
           >
             {submission.resolved ? 'Mark as Pending' : 'Mark as Resolved'}

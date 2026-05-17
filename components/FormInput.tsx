@@ -24,7 +24,7 @@ export function FormInput({
   return (
     <div className="space-y-2">
       <label htmlFor={name} className="block text-sm font-medium text-gray-300">
-        {label} {required && <span className="text-cyan">*</span>}
+        {label} {required && <span className="text-purple">*</span>}
       </label>
       {multiline ? (
         <textarea
@@ -73,7 +73,7 @@ export function FormSelect({
   return (
     <div className="space-y-2">
       <label htmlFor={name} className="block text-sm font-medium text-gray-300">
-        {label} {required && <span className="text-cyan">*</span>}
+        {label} {required && <span className="text-purple">*</span>}
       </label>
       <select
         id={name}
@@ -111,7 +111,7 @@ export function FormToggle({ label, name, checked, onChange }: FormToggleProps) 
           onChange={onChange}
           className="sr-only peer"
         />
-        <div className="w-11 h-6 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-cyan"></div>
+        <div className="w-11 h-6 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-purple"></div>
       </label>
     </div>
   )
@@ -137,7 +137,7 @@ export function FormRadioGroup({
   return (
     <div className="space-y-2">
       <label className="block text-sm font-medium text-gray-300">
-        {label} {required && <span className="text-cyan">*</span>}
+        {label} {required && <span className="text-purple">*</span>}
       </label>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
         {options.map((opt) => (
@@ -145,8 +145,8 @@ export function FormRadioGroup({
             key={opt}
             className={`flex items-center justify-center px-4 py-2 rounded-xl border cursor-pointer text-sm font-medium transition-all ${
               value === opt
-                ? 'border-cyan bg-cyan/10 text-cyan'
-                : 'border-border-subtle text-gray-400 hover:border-cyan/50 hover:text-white'
+                ? 'border-purple bg-purple/10 text-purple'
+                : 'border-border-subtle text-gray-400 hover:border-purple/50 hover:text-white'
             }`}
           >
             <input
@@ -176,13 +176,13 @@ export function FormYesNo({ label, name, required = false }: FormYesNoProps) {
   return (
     <div className="space-y-2">
       <label className="block text-sm font-medium text-gray-300">
-        {label} {required && <span className="text-cyan">*</span>}
+        {label} {required && <span className="text-purple">*</span>}
       </label>
       <div className="flex gap-3">
         {['Yes', 'No'].map((opt) => (
           <label
             key={opt}
-            className="flex-1 flex items-center justify-center px-4 py-3 rounded-xl border border-border-subtle cursor-pointer text-sm font-medium text-gray-400 hover:border-cyan/50 transition-all has-[:checked]:border-cyan has-[:checked]:bg-cyan/10 has-[:checked]:text-cyan"
+            className="flex-1 flex items-center justify-center px-4 py-3 rounded-xl border border-border-subtle cursor-pointer text-sm font-medium text-gray-400 hover:border-purple/50 transition-all has-[:checked]:border-purple has-[:checked]:bg-purple/10 has-[:checked]:text-purple"
           >
             <input
               type="radio"
