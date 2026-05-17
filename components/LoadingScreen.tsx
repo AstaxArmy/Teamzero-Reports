@@ -23,7 +23,7 @@ export function LoadingScreen() {
             width={140}
             height={140}
             className="mx-auto animate-pulse"
-            style={{ filter: 'invert(1) brightness(1.2) drop-shadow(0 0 20px rgba(0, 229, 255, 0.8)) drop-shadow(0 0 40px rgba(0, 229, 255, 0.4))' }}
+            style={{ filter: 'invert(1) brightness(1.2) drop-shadow(0 0 20px rgba(168, 85, 247, 0.8)) drop-shadow(0 0 40px rgba(168, 85, 247, 0.4))' }}
           />
         </div>
         <div className="loading-text">TEAM ZERO</div>
